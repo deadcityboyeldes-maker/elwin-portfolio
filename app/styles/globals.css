@@ -1,0 +1,278 @@
+@import "tailwindcss";
+@layer utilities {
+  .font-creepster {
+    font-family: var(--font-creepster);
+  }
+  .font-chelsea {
+    font-family: var(--font-chelsea);
+  }
+  .font-cormorant {
+    font-family: var(--font-cormorant);
+  }
+  /* اضافه کن */
+  .font-russo {
+    font-family: "Russo One", sans-serif;
+  }
+  .font-estedad {
+    font-family: "Estedad", sans-serif;
+  }
+  .font-handjet {
+    font-family: "Handjet", monospace;
+  }
+}
+/* فونت‌های زبان */
+[data-locale="en"] {
+  font-family: "Russo One", sans-serif;
+}
+
+[data-locale="fa"] {
+  font-family: "Estedad", sans-serif;
+  direction: rtl;
+}
+:root {
+  --font-russo: var(--font-russo);
+  --font-accent: "Handjet", monospace;
+  --font-fa: "Estedad", sans-serif;
+}
+:root {
+  --font-accent: "Handjet", monospace;
+  --font-fa: "Estedad", sans-serif;
+  --font-en: "Russo One", sans-serif;
+}
+:root {
+  --neon-blue: #3b82f6;
+  --neon-purple: #a855f7;
+}
+html {
+  overflow-y: scroll !important;
+}
+
+body {
+  overflow-y: visible !important;
+  height: auto !important;
+  background: black;
+  color: white;
+}
+
+/* Glow utility */
+.glow-blue {
+  box-shadow: 0 0 20px var(--neon-blue);
+}
+
+.glow-purple {
+  box-shadow: 0 0 25px var(--neon-purple);
+}
+.glitch {
+  position: relative;
+}
+
+.glitch::before,
+.glitch::after {
+  content: "ELWIN";
+  position: absolute;
+  left: 0;
+}
+
+.glitch::before {
+  color: #00f;
+  animation: glitch 1s infinite;
+}
+
+.glitch::after {
+  color: #a855f7;
+  animation: glitch 1s infinite reverse;
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(2px, -2px);
+  }
+  60% {
+    transform: translate(-1px, 1px);
+  }
+  80% {
+    transform: translate(1px, -1px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+.cyber-flow {
+  background: linear-gradient(120deg, #3b82f6, #60a5fa, #3b82f6, #2563eb);
+  background-size: 300% 300%;
+  animation: flow 4s ease infinite;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* حرکت داخل متن */
+@keyframes flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.nfs-button {
+  position: relative;
+  padding: 14px 40px;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+}
+
+/* متن */
+.nfs-text {
+  position: relative;
+  z-index: 2;
+  color: #60a5fa;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+/* خط سرعت (افکت NFS) */
+.nfs-line {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(59, 130, 246, 0.8),
+    transparent
+  );
+  transform: skewX(-20deg);
+  animation: speedLine 2.5s infinite;
+}
+
+/* انیمیشن خط */
+@keyframes speedLine {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 200%;
+  }
+}
+
+/* hover انفجار نور */
+.nfs-button:hover {
+  box-shadow:
+    0 0 20px rgba(59, 130, 246, 0.5),
+    0 0 60px rgba(59, 130, 246, 0.3);
+}
+
+.cyber-desc {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 15px;
+  line-height: 1.8;
+  letter-spacing: 0.5px;
+  position: relative;
+}
+
+/* نور خیلی subtle */
+.cyber-desc::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(59, 130, 246, 0.2),
+    transparent
+  );
+  opacity: 0.3;
+  filter: blur(20px);
+}
+.nfs-button {
+  position: relative;
+  padding: 14px 40px;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+}
+
+.nfs-text {
+  position: relative;
+  z-index: 2;
+  color: #60a5fa;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.nfs-line {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(59, 130, 246, 0.8),
+    transparent
+  );
+  transform: skewX(-20deg);
+  animation: speedLine 2.2s infinite;
+}
+
+@keyframes speedLine {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 200%;
+  }
+}
+
+.elwin-text {
+  font-family: "Orbitron", sans-serif;
+  font-size: 4rem;
+  font-weight: 800;
+  letter-spacing: 0.6em;
+  text-transform: uppercase;
+  text-align: center;
+
+  background: linear-gradient(90deg, #3b82f6, #005bca, #2563eb);
+  background-size: 200% 200%;
+  animation: glowMove 4s ease infinite;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+@keyframes glowMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
